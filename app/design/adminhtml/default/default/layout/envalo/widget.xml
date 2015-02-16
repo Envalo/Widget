@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_widget_instance_edit>
+        <reference name="content">
+            <block name="envalo.widget.shim" type="adminhtml/template" template="envalo/widget/shim.phtml" />
+        </reference>
+    </adminhtml_widget_instance_edit>
+</layout>

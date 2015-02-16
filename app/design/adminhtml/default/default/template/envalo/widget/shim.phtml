@@ -1,0 +1,41 @@
+<?php /**
+ * This file is to fix a bug with Widgets in the Admin.
+ * When using custom Block Reference locations that are specific to certain layout handles, after you save and reload
+ * the widget editor your Block Reference dropdown will only have default references and your selection will be lost.
+ *
+ * The bug is that the call to "container.down('input.layout_handle_pattern')" does not return anything. It may have at
+ * one point but currently it doesn't. I fixed this by adding an else clause that looks for the value in a select input
+ * element.
+ */ ?>
+<?php /* @var $this Mage_Adminhtml_Block_Template */?>
+<script type="text/javascript">
+    WidgetInstance.displayPageGroup = function(container, additional) {
+        container = $(container);
+        if (!container) {
+//            if (activePageGroupId = this.activePageGroups.get(container.up('div.page_group_container').id)) {
+//                this.hideBlockContainer(activePageGroupId);
+//            }
+        }
+        if (!additional) {
+            additional = {};
+        }
+        if (activePageGroupId = this.activePageGroups.get(container.up('div.page_group_container').id)) {
+            this.hideBlockContainer(activePageGroupId);
+        }
+        this.activePageGroups.set(container.up('div.page_group_container').id, container.id);
+        this.showBlockContainer(container);
+        blockContainer = container.down('div.block_reference');
+        if (blockContainer && blockContainer.innerHTML == '') {
+            layoutHandle = '';
+            if (layoutHandleField = container.down('input.layout_handle_pattern')) {
+                layoutHandle = layoutHandleField.value;
+            }
+            else if (layoutHandleField = container.down('select#layout_handle')) {
+                layoutHandle = layoutHandleField.value;
+            }
+            this.loadSelectBoxByType('block_reference', container, layoutHandle, additional);
+        }
+        this.loadSelectBoxByType('block_template', container, additional.selectedBlock, additional);
+    }
+
+</script>

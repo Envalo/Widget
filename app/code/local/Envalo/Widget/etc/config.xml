@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Envalo_Widget>
+            <version>0.0.1</version>
+        </Envalo_Widget>
+    </modules>
+    <global>
+        <helpers>
+            <envalo_widget>
+                <class>Envalo_Widget_Helper</class>
+            </envalo_widget>
+        </helpers>
+    </global>
+    <adminhtml>
+        <layout>
+            <updates>
+                <envalo_widget>
+                    <file>envalo/widget.xml</file>
+                </envalo_widget>
+            </updates>
+        </layout>
+    </adminhtml>
+</config>

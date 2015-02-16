@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Envalo_Widget>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+                <Mage_Cms/>
+                <Mage_Widget/>
+
+            </depends>
+        </Envalo_Widget>
+    </modules>
+</config>
