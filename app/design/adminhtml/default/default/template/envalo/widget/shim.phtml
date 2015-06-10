@@ -6,9 +6,27 @@
  * The bug is that the call to "container.down('input.layout_handle_pattern')" does not return anything. It may have at
  * one point but currently it doesn't. I fixed this by adding an else clause that looks for the value in a select input
  * element.
+ *
+ * This file is now also used to inject the functionality for displaying a CMS page chooser into the Widget designer
  */ ?>
 <?php /* @var $this Mage_Adminhtml_Block_Template */?>
 <script type="text/javascript">
+    WidgetInstance.displayEntityChooser =
+        WidgetInstance.displayEntityChooser.wrap(function(originalCall, type, chooser, additional){
+            if(type!=='pages')
+            {
+                originalCall(type, chooser, additional);
+            }
+            else
+            {
+                if(!additional){
+                    additional = {};
+                }
+                additional.url = '<?php echo $this->getUrl('*/*/pages', array('_current' => true)); ?>';
+                additional.post_parameters = $H({});
+                WidgetInstance.displayChooser(chooser, additional);
+            }
+        });
     WidgetInstance.displayPageGroup = function(container, additional) {
         container = $(container);
         if (!container) {

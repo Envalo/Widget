@@ -6,11 +6,46 @@
         </Envalo_Widget>
     </modules>
     <global>
+        <models>
+            <envalo_widget>
+                <class>Envalo_Widget_Model</class>
+                <resourceModel>envalo_widget_resource</resourceModel>
+            </envalo_widget>
+            <envalo_widget_resource>
+                <class>Envalo_Widget_Model_Resource</class>
+            </envalo_widget_resource>
+            <widget>
+                <rewrite>
+                    <widget_instance>Envalo_Widget_Model_Widget_Widget_Instance</widget_instance>
+                </rewrite>
+            </widget>
+        </models>
+        <blocks>
+            <envalo_widget>
+                <class>Envalo_Widget_Block</class>
+            </envalo_widget>
+            <widget>
+                <rewrite>
+                    <adminhtml_widget_instance_edit_tab_main_layout>Envalo_Widget_Block_Widget_Adminhtml_Widget_Instance_Edit_Tab_Main_Layout</adminhtml_widget_instance_edit_tab_main_layout>
+                </rewrite>
+            </widget>
+        </blocks>
         <helpers>
             <envalo_widget>
                 <class>Envalo_Widget_Helper</class>
             </envalo_widget>
         </helpers>
+        <events>
+            <cms_page_render>
+                <observers>
+                    <envalo_widget>
+                        <type>singleton</type>
+                        <class>envalo_widget/observer</class>
+                        <method>addPageSpecificHandle</method>
+                    </envalo_widget>
+                </observers>
+            </cms_page_render>
+        </events>
     </global>
     <adminhtml>
         <layout>
@@ -21,4 +56,15 @@
             </updates>
         </layout>
     </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <envalo_widget before="Mage_Widget_Adminhtml">Envalo_Widget_Adminhtml</envalo_widget>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
 </config>
