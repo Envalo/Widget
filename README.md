@@ -11,8 +11,13 @@ default references. This is all detailed in the following blog post: http://www.
 This module fixes the bug.
 
 Additionally, with this module you can now specify specific CMS pages when creating layout updates in the widget editor.
-This is a feature I felt that Magento Widgets was seriously lacking. 
-The blog post for this can be found here:
+This is a feature I felt that Magento Widgets was seriously lacking.
+
+The blog posts for this can be found here:
+
+www.envalo.com/enhancing-magento-widgets-choosing-specific-cms-pages-part-1/
+
+www.envalo.com/enhancing-magento-widgets-choosing-specific-cms-pages-part-2/
 
 
 The module has been tested in both community and enterprise editions.

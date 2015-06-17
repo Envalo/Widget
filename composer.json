@@ -1,0 +1,15 @@
+{
+    "name": "Envalo/Widget",
+    "license": "MIT",
+    "type": "magento-module",
+    "description": "Enhance Magento Widgets with Specific CMS Page Placement",
+    "homepage": "https://www.envalo.com",
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    },
+    "authors":[
+        {
+            "name":"Tim Reynolds"
+        }
+    ]
+}
