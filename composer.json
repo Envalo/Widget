@@ -1,5 +1,5 @@
 {
-    "name": "Envalo/Widget",
+    "name": "envalo/widget",
     "license": "MIT",
     "type": "magento-module",
     "description": "Enhance Magento Widgets with Specific CMS Page Placement",
