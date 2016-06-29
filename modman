@@ -1,4 +1,4 @@
 app/code/local/Envalo/Widget                                            app/code/local/Envalo/Widget
 app/design/adminhtml/default/default/layout/envalo/widget.xml           app/design/adminhtml/default/default/layout/envalo/widget.xml
 app/design/adminhtml/default/default/template/envalo/widget/shim.phtml  app/design/adminhtml/default/default/template/envalo/widget/shim.phtml
-app/etc/modules/*                                                       app/etc/Modules/
+app/etc/modules/*                                                       app/etc/modules/
