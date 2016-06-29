@@ -5,7 +5,7 @@
     "description": "Enhance Magento Widgets with Specific CMS Page Placement",
     "homepage": "https://www.envalo.com",
     "require": {
-        "magento-hackathon/magento-composer-installer": "*"
+        "magento-hackathon/magento-composer-installer": "2.1.1"
     },
     "authors":[
         {
